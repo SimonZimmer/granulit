@@ -1,0 +1,25 @@
+body  {
+    background-image: url("background.png");
+    background-color: #cccccc;
+}
+
+
+navBar {
+    font-family: font-weight:normal; 
+    font-style: oblique; 
+    font-family: 'Arial Fett';
+	font-weight: 500;
+    color: aliceblue;
+    margin-left: 2em;
+    font-size: 30px;
+}
+
+ul {
+    display:inline-block;
+    font-size: 20px;
+}
+
+li{
+    display: inline-block;
+    padding: 1em;
+}
