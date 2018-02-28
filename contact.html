@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
+  type="text/javascript"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
+</head>
+<body>
+    
+    <div class="mainNav">
+            <li id="logo">GRANULIT</li>
+            <li>TRACKS</li>
+            <li>MIXES</li>
+            <li>DOWNLOADS</li>
+            <li>COLLABS</li>
+            <li>CONTACT</li>
+    </div>
+    
+    <div class=socialNav>
+            <li id="socialText">in other places:</li>
+            <li><img id="socialLogo" class="svg social-link" src="bc1.svg" alt="bandcamp" style="width:3em"></li>
+            <li><img id="socialLogo" class="svg social-link" src="fb.svg" alt="bandcamp" style="width:3em"></li>
+            <li><img id="socialLogo" class="svg social-link" src="sc.svg" alt="bandcamp" style="width:3em"></li>
+            <li><img id="socialLogo" class="svg social-link" src="insta.svg" alt="bandcamp" style="width:3em"></li>
+    </div>
+    
+    <div class="content">
+        <div class="text">
+            <form class="form" action="/action_page.php">
+                your email address:<br>
+                <input type="text" name="email" class="input"><br>
+                subject:<br>
+                <input type="text" name="email" class="input"><br>
+                message:<br>
+                <textarea name="content" class="input" id="message" placeholder="Write something.."></textarea><br>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+    </div>
+    
+</body>
+<script>
+     jQuery('img.svg').each(function(){
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+            }, 'xml');
+        });
+    
+    function adaptNav() {
+        var x = document.getElementById("mainNav");
+        if (x.className === "mainNav") {
+            x.className += " mobile";
+        }
+        else {
+            x.classname = "mainNav"; 
+        }
+    }
+</script>
+</html>
