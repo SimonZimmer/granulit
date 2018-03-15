@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
+  type="text/javascript"></script>
+</head>
+<body>
+    
+    <div class="mainNav" id="mainNav">
+        <li><a id="logo" href="index.html">GRANULIT:</a></li>
+        <li><a id="firstMenuItem" href="music.html">MUSIC</a></li>
+        <li><a href="index.html">BIOGRAPHY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a id="lastNavItem" target="_blank" href="http://exolarmusic.com/">EXOLAR</a></li>
+        <li class="icon" onclick="adaptNav()"><a href="javascript:void(0);" id="innerIcon">&#9776;</a></li>
+    </div>
+    
+    <div class=socialNav>
+            <li id="socialText">in other places:</li>
+            <li><a target="_blank" href="https://www.facebook.com/Granulit/"><img id="socialLogo" class="svg social-link" src="fb.svg"  style="width:3em"></a></li>
+            <li><a target="_blank" href="https://www.soundcloud.com/granulit/"><img id="socialLogo" class="svg social-link" src="sc.svg" alt="soundcloud" style="width:3em"></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/granulitmusic/"><img id="socialLogo" class="svg social-link" src="insta.svg" alt="instagram" style="width:3em"></a></li>
+            <li><a target="_blank" href=https://www.residentadvisor.net/dj/granulit><img style="z-index:99" id="socialLogo" class="svg social-link" src="ra.svg" alt="resident advisor" style="width:3em"></a></li>
+    </div>
+    
+    <div class="currentNav">
+        <h1>
+            DOWNLOADS:
+        </h1>
+    </div>
+    
+    <div class="content">
+        <div class="text" href="contact.html">
+            Here is some music that you can download free of charge.<br>
+            All you have to do is subscribe to the newsletter, from which you will get only the most important info on things I'll do in the future.<br>
+            <br>
+        </div>
+        
+    <div class=embeddedBc>
+        <iframe id="dl1" src="https://bandcamp.com/EmbeddedPlayer/album=4038965765/size=large/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="http://granulit.bandcamp.com/album/enthalpy-ep">Enthalpy EP by Granulit &amp; Working Dog</a></iframe>
+        
+        <iframe id="dl2" src="https://bandcamp.com/EmbeddedPlayer/track=4220893263/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="http://granulit.bandcamp.com/track/detached">Detached by Granulit</a></iframe>
+    </div>
+        
+    <footer class="text footer" href="contact.html">
+        download service provided by <a href=www.bandcamp.com>bandcamp</a>
+        <br>
+    </footer>
+<!--
+            detuned pads<br>
+            subtle field recordings<br>
+            broken beats (arrangement and structure)<br>
+            vocalesque noises<br>
+            wood and tom percussions<br>
+            occult and strange atmosphere<br>
+-->
+    </div>
+</body>
+    
+<script>
+     jQuery('img.svg').each(function(){
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
+    
+     function adaptNav() {
+        var x = document.getElementById("mainNav");
+        if (x.className == "mainNav") {
+            x.className += " mobile";
+        }
+        else {
+            x.className = "mainNav"; 
+        }
+    }
+</script>
+</html>

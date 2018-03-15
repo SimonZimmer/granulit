@@ -8,6 +8,10 @@ body  {
     margin: 0;
 }
 
+h1 {
+    font-size:1.4em;
+}
+
 .mainNav {
     width: 100vh;
     height:15vw;
@@ -58,7 +62,11 @@ body  {
     left:30px;
 }
 
-#menuItem {
+#firstMenuItem {
+    margin-left:50px;
+}
+
+#lastNavItem {
     margin-left:50px;
 }
 
@@ -66,9 +74,21 @@ body  {
     display:none;
 }
 
+.currentNav {
+    color: white;
+    padding-top:40px;
+    padding-left:20px;
+    position:relative;
+    margin-left: 15vw;
+    display:inline-block;
+    width: calc(70vw - 2.5em);
+    
+    animation: 1.2s ease-out 0s 1 appear;
+}
+
 .content {
+    top:0;
     padding:20px;
-    padding-top:80px;
     padding-bottom:75vh;
     position:relative;
     height:100vh;
@@ -77,6 +97,10 @@ body  {
     width: calc(70vw - 2.5em);
     
     animation: 1.2s ease-out 0s 1 appear;
+}
+
+.content a{
+    color: white;
 }
 
 .socialNav {
@@ -123,7 +147,7 @@ body  {
 }
 
 .text {
-    font-size:1.5em;
+    font-size:1em;
     text-align: block;
     line-height: 1.5;
     color:white;
@@ -248,11 +272,12 @@ body  {
         border:transparent;
         margin-left:75vw;
         top:-20%;
-        height:50%;
-    }
+        height:90%;
+    }    
     
-    .mainNav.mobile li{
+    .mainNav.mobile li {
         margin-top:0vh;
+        padding-top:10px;
         width: calc(100vw - 0em);
         left:0em;
         display:block;
@@ -264,11 +289,7 @@ body  {
     }
     
     .mainNav #innerIcon {
-        display:inline-block;
-        color:white;
-        padding-left:0;
-        width:100%;
-        margin-left:0;
+        border:none;
     }
     
     #logo {
@@ -276,9 +297,13 @@ body  {
         width:4.3em;
     }
     
-    #menuItem {
-    margin-left:0px;
-}
+    #firstMenuItem {
+        margin-left:0px;
+    }
+    
+    #lastNavItem {
+        margin-left:0;
+    }
     
     .content {
         width: calc(100vw - 3.6em);
@@ -315,6 +340,34 @@ body  {
     #socialText {
         display:none;
     }
+}
+
+#dl1 {
+    float:left;
+    border: 0; 
+    width: 350px; 
+    height: 555px;
+}
+
+#dl2 {
+    float:right;
+    border: 0;
+    width: 350px; 
+    height: 442px;
+}
+
+.embeddedSc {
+    padding-top:50px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: transparent;
+  text-align: center;
 }
 
 @media (min-width:320px)
