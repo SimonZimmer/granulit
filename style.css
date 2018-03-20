@@ -2,10 +2,12 @@ body  {
     font-family: 'Inconsolata', monospace;
     background-color: black;
     max-width: 2000px;
-    background-image: url("background_long.png");
+    background-color:black;
     width:100%;
     height:100%;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 h1 {
@@ -17,20 +19,21 @@ h1 {
     height:15vw;
     position:fixed;
     font-family: 'Inconsolata';
-    font-size: 15px;
+    font-size: 12px;
 	font-weight: 800;
     color: white;
     top:0;
     transform-origin: left top;
     transform:rotate(-90deg)translateX(-100%);
     animation: 1.2s ease-out 0s 1 slideInFromBottom;
+    font-size:1.8vh
 }
 
 .mainNav li{
+    padding-top:2%;
     z-index: 2;
     position:relative;
     display: inline-block;
-    margin-top:10px;
 }
 
 .mainNav ul{
@@ -44,9 +47,9 @@ h1 {
     color:white;
     position:relative;
     cursor: pointer;
-    font-size:1.4em;
+    font-size:1.2em;
     display: inline-block;
-    padding: 10px;
+    padding: 5px;
     border: solid transparent;
     border-width: 2px;
 }
@@ -57,17 +60,16 @@ h1 {
 }
 
 #logo {
-    padding-left:20px;
-    font-size:3em;
-    left:30px;
+    font-size:2.5em;
+    left:10%;
 }
 
 #firstMenuItem {
-    margin-left:50px;
+    margin-left:20px;
 }
 
 #lastNavItem {
-    margin-left:50px;
+    margin-left:20px;
 }
 
 .mainNav li.icon {
@@ -76,6 +78,7 @@ h1 {
 
 .currentNav {
     color: white;
+    font-size:12px;
     padding-top:40px;
     padding-left:20px;
     position:relative;
@@ -89,9 +92,9 @@ h1 {
 .content {
     top:0;
     padding:20px;
-    padding-bottom:75vh;
+    padding-bottom:10vh;
     position:relative;
-    height:100vh;
+    height:65vh;
     margin-left: 15vw;
     display:inline-block;
     width: calc(70vw - 2.5em);
@@ -115,21 +118,22 @@ h1 {
     
     animation: 1.2s ease-out 0s 1 slideInFromTop;
 }
+
 .socialNav li{
     position:relative;
     display: inline-block;
     left:50px;
-    top:50%;
+    top:30%;
 }
 
 #socialText {
-    font-size:1em;
+    font-size:80%;
     color:white;
     padding-right:30px;
 }
 
 .social-link:hover path {
-    fill: lightgray;
+    fill: gray;
 }
 
 .social-link path {
@@ -147,7 +151,7 @@ h1 {
 }
 
 .text {
-    font-size:1em;
+    font-size:85%;
     text-align: block;
     line-height: 1.5;
     color:white;
@@ -160,7 +164,7 @@ h1 {
 .input {
     position:relative;
     padding:10px;
-    font-size:0.8em;
+    font-size:80%;
     width:90%;
     background-color:transparent;
     color:white;
@@ -170,7 +174,7 @@ h1 {
 
 .form .submit {
     height:2.2em;
-    font-size:0.8em;
+    font-size:80%;
     border: solid transparent;
     border-width :2px;
     background-color:transparent;
@@ -189,6 +193,151 @@ h1 {
     width:90%;
     resize: vertical;
 }
+
+.embeddedBc {
+    width: 100%;
+}
+
+#dl1 {
+    padding:2vh;
+    padding-left:0;
+    float:left;
+    border: 0; 
+    width: 350px; 
+    height: 555px;
+}
+
+#dl2 {
+    padding:2vh;
+    padding-left:0;
+    float:center;
+    border: 0;
+    width: 350px; 
+    height: 442px;
+}
+
+.embeddedSc {
+    padding-top:50px;
+}
+
+.galleryPic iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.galleryPic {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0px;
+    height: 0;
+    overflow: hidden;
+}
+
+#presskit {
+    padding:20px;
+    padding-left:0;
+}
+
+#presskit a {
+    display: inline block;
+    text-decoration: underline;
+}
+
+/*slideshow*/
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease-out;
+}
+
+.active, .dot:hover {
+  background-color: #FFFFFF;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+footer {
+    font-size:90%;
+    color:white;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 8vh;
+    background-color: transparent;
+    text-align: center;
+    padding:25px;
+}
+
+footer .footerElement {
+    padding:10px;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+footer a:hover {
+    cursor: pointer;
+}
+
 
 @keyframes slideInFromBottom {
     0% {
@@ -226,6 +375,25 @@ h1 {
     }
 }
 
+@keyframes slideOutToBottom {
+    0% {
+        margin-top:0em;
+    }
+    100% {
+        margin-top:100vh;
+    }
+}
+
+@keyframes slideOutToTop {
+    0% {
+        margin-top:0em;
+    }
+    100% {
+        margin-top:-100vh;
+    }
+}
+
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -242,6 +410,20 @@ h1 {
     }
     100% {
         transform:rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 1075px) {
+    
+    #dl2 {
+        float: none;
+        width: 50%;
+        margin: 0 auto;
+    }
+    
+    #dl1 {
+        width: 50%;
+        margin: 0 auto;
     }
 }
 
@@ -266,12 +448,12 @@ h1 {
     }
     
     .mainNav li.icon {
-        font-size:2.5em;
+        font-size:3em;
         display:block;
         position: absolute;
         border:transparent;
         margin-left:75vw;
-        top:-20%;
+        top:20%;
         height:90%;
     }    
     
@@ -285,15 +467,16 @@ h1 {
     }
     
     .mainNav.mobile #innerIcon {
-        color:gray;
     }
     
     .mainNav #innerIcon {
         border:none;
+        top:-2vh;
     }
     
     #logo {
-        left:0px;
+        top:vh;
+        left:10px;
         width:4.3em;
     }
     
@@ -308,6 +491,29 @@ h1 {
     .content {
         width: calc(100vw - 3.6em);
         left:-15vw;
+    }
+    
+    .socialNavBackgroundTop {
+        position: absolute;
+        background-color: black;
+        transform: none;
+        z-index: 0;
+        transform: none;
+        margin-left:0vw;
+        height:10vh;
+        width: 100vw;
+    }
+    
+    .socialNavBackgroundBottom {
+        position: absolute;
+        background-color: black;
+        transform: none;
+        z-index: 0;
+        transform: none;
+        margin-left:0vw;
+        margin-top:90vh;
+        height:10vh;
+        width: 100vw;
     }
     
     .socialNav {
@@ -327,7 +533,6 @@ h1 {
         position:static;
         display: inline-block;
         padding:3vh;
-        padding-right:10px;
         padding-left:10px;
     }
     
@@ -337,37 +542,24 @@ h1 {
         display: inline-block;
     }
     
+    .currentNav {
+        z-index:-1;
+    }
+    
     #socialText {
         display:none;
     }
-}
-
-#dl1 {
-    float:left;
-    border: 0; 
-    width: 350px; 
-    height: 555px;
-}
-
-#dl2 {
-    float:right;
-    border: 0;
-    width: 350px; 
-    height: 442px;
-}
-
-.embeddedSc {
-    padding-top:50px;
-}
-
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: transparent;
-  text-align: center;
+    
+    #dl2 {
+        margin-top:50px;
+        float: none;
+        width: 100%;
+    }
+    
+    #dl1 {
+        width: 100%;
+    }
+    
 }
 
 @media (min-width:320px)

@@ -14,8 +14,8 @@
     <div class="mainNav" id="mainNav">
         <li><a id="logo" href="index.html">GRANULIT:</a></li>
         <li><a id="firstMenuItem" href="music.html">MUSIC</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="bio.html">BIO</a></li>
+        <li><a href="downloads.html"> DOWNLOADS</a></li>
+        <li><a href="contact.html">BIO</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li><a id="lastNavItem" target="_blank" href="http://exolarmusic.com/">EXOLAR</a></li>
         <li class="icon" onclick="adaptNav()"><a href="javascript:void(0);" id="innerIcon">&#9776;</a></li>
@@ -25,27 +25,51 @@
     
     <div class="currentNav">
         <h1>
-            DOWNLOADS:
+            GALLERY:
         </h1>
     </div>
     
     <div class="content">
-        <div class="text" href="contact.html">
-            Here is some music that you can download free of charge.<br>
-            All you have to do is subscribe to the newsletter, from which you will get only the most important info on things I'll do in the future.<br>
-            <br>
-        </div>
         
-        <div class=embeddedBc>
-            <iframe id="dl1" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=4038965765/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://granulit.bandcamp.com/album/enthalpy-ep">Enthalpy EP by Granulit &amp; Working Dog</a></iframe>
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <iframe src="https://player.vimeo.com/video/242955436" frameborder="0" style="width:100%; height:452px;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="mySlides fade">
+                <img src="images/2.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/3.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/4.jpg" style="width:100%"; height:452px;>
+            </div>
+            <div class="mySlides fade">
+                <img src="images/5.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/6.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/7.jpg" style="width:100%">
+            </div>
 
-            <iframe id="dl2" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=4220893263/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a hsref="http://granulit.bandcamp.com/track/detached">Detached by Granulit</a></iframe>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
         </div>
         
-    <div class="text" id="presskit">
-        complete presskit (pdf-file):
-        <a href="/downloads/granulit_presskit.pdf">download</a>
-    </div>
+        <br>
+        
     </div>
     
     <script 
