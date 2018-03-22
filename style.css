@@ -1,8 +1,17 @@
+@font-face {
+  font-family: 'Gothic';
+  src: url('NHaasGroteskTXPro-75Bd.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Naas';
+  src: url('NHaasGroteskTXPro-55Rg.ttf')  format('truetype');
+}
+
 body  {
-    font-family: 'Inconsolata', monospace;
-    background-color: black;
+    background-image: url("background.jpg");
+    font-family: 'Naas';
     max-width: 2000px;
-    background-color:black;
     width:100%;
     height:100%;
     margin: 0;
@@ -14,62 +23,78 @@ h1 {
     font-size:1.4em;
 }
 
+.mainNavBackground {
+    background-color: black;
+    opacity: 0.6;
+    font-family:'Gothic';
+    width: 100vh;
+    height:7vw;
+    position:fixed;
+    color: white;
+    top:0;
+    transform-origin: left top;
+    transform:rotate(-90deg)translateX(-100%);
+    font-size:2vh;
+    z-index:-1;
+}
+
 .mainNav {
     width: 100vh;
-    height:15vw;
+    height:7vw;
     position:fixed;
-    font-family: 'Inconsolata';
-    font-size: 12px;
-	font-weight: 800;
+    font-family:'Gothic';
+    font-size:2vh;
     color: white;
     top:0;
     transform-origin: left top;
     transform:rotate(-90deg)translateX(-100%);
     animation: 1.2s ease-out 0s 1 slideInFromBottom;
-    font-size:1.8vh
 }
 
 .mainNav li{
-    padding-top:2%;
     z-index: 2;
     position:relative;
     display: inline-block;
-}
-
-.mainNav ul{
-    z-index: 2;
-    position:relative;
-    display: inline-block;
+    left:20px;
 }
 
 .mainNav li a {
     text-decoration: none;
     color:white;
-    position:relative;
     cursor: pointer;
-    font-size:1.2em;
-    display: inline-block;
-    padding: 5px;
+    padding:5px;
     border: solid transparent;
     border-width: 2px;
 }
 
+.mainNav li a,
+.mainNav::after {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mainNav::after {
+    content:"";
+    height: 100%;
+}
+
 .mainNav li a:hover {
-    color:lightgray;
-    border-color: lightgray;
+    color:darkgray;
+    border-color: darkgray;
 }
 
 #logo {
-    font-size:2.5em;
-    left:10%;
+    font-size:1.8em;
+    margin-left:30px;
 }
 
 #firstMenuItem {
-    margin-left:20px;
+    margin-left:50px;
 }
 
 #lastNavItem {
-    margin-left:20px;
+    margin-left:50px;
+    font-size:80%;
 }
 
 .mainNav li.icon {
@@ -77,12 +102,13 @@ h1 {
 }
 
 .currentNav {
-    color: white;
+    z-index:2;
+    color: lightgray;
     font-size:12px;
     padding-top:40px;
     padding-left:20px;
     position:relative;
-    margin-left: 15vw;
+    margin-left: 7vw;
     display:inline-block;
     width: calc(70vw - 2.5em);
     
@@ -94,10 +120,10 @@ h1 {
     padding:20px;
     padding-bottom:10vh;
     position:relative;
-    height:65vh;
-    margin-left: 15vw;
+    min-height:72vh;
+    margin-left: 7vw;
     display:inline-block;
-    width: calc(70vw - 2.5em);
+    width: calc(85vw - 2.5em);
     
     animation: 1.2s ease-out 0s 1 appear;
 }
@@ -108,22 +134,36 @@ h1 {
 
 .socialNav {
     width: 100vh;
-    height:15vw;
+    height:7vw;
     position:fixed;
     color: white;
     top:0;
     transform-origin: left top;
     transform: rotate(90deg)translateY(-100%);
-    margin-left:85vw;
+    margin-left:92vw;
     
     animation: 1.2s ease-out 0s 1 slideInFromTop;
+}
+
+.socialNavBackgroundRight {
+    background-color: black;
+    opacity: 0.6;
+    width: 100vh;
+    height:7vw;
+    position:fixed;
+    color: white;
+    top:0;
+    transform-origin: left top;
+    transform: rotate(90deg)translateY(-100%);
+    margin-left:92vw;
+    z-index: -1;
 }
 
 .socialNav li{
     position:relative;
     display: inline-block;
     left:50px;
-    top:30%;
+    top:45%;
 }
 
 #socialText {
@@ -133,28 +173,28 @@ h1 {
 }
 
 .social-link:hover path {
-    fill: gray;
+    fill: red;
 }
 
 .social-link path {
-    fill: white;
+    fill: red;
 }
 
 #socialLogo {
     cursor: pointer;
-    height:1em;
+    height:1.4vh;
     width:50px;
 }
 
 #socialLogo:hover {
-    color:lightgray;
+    fill:darkgray;
 }
 
 .text {
-    font-size:85%;
+    font-size:100%;
     text-align: block;
-    line-height: 1.5;
-    color:white;
+    line-height: 1.3;
+    color:lightgray;
 }
 
 .form {
@@ -167,8 +207,8 @@ h1 {
     font-size:80%;
     width:90%;
     background-color:transparent;
-    color:white;
-    border: solid white;
+    color:lightgray;
+    border: solid lightgray;
     border-width :1px;
 }
 
@@ -178,7 +218,7 @@ h1 {
     border: solid transparent;
     border-width :2px;
     background-color:transparent;
-    color:white;
+    color:lightgray;
     cursor: pointer;
 }
 
@@ -220,23 +260,8 @@ h1 {
     padding-top:50px;
 }
 
-.galleryPic iframe {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-}
-
-.galleryPic {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 0px;
-    height: 0;
-    overflow: hidden;
-}
-
 #presskit {
+    font-weight:1000;
     padding:20px;
     padding-left:0;
 }
@@ -248,10 +273,38 @@ h1 {
 
 /*slideshow*/
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    position:relative;
+    width: calc(100% + 40px);
+    margin: -20px;
+    margin-top: -104px;
+    overflow: hidden;
 }
+
+
+
+.vimeoEmbed {
+    position:relative;
+    margin-top:0%;
+    padding-bottom: 67%;
+    height: 100%;
+    max-width: 100%;
+}
+
+#puffer {
+    width:100%
+    max-height:10px;
+}
+
+.vimeoEmbed iframe,
+.vimeoEmbed object,
+.vimeoEmbed embed { 
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 .mySlides {
     display: none;
@@ -265,7 +318,6 @@ h1 {
   margin-top: -22px;
   padding: 16px;
   color: white;
-  font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
@@ -279,22 +331,6 @@ h1 {
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
-.dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: gray;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease-out;
-}
-
-.active, .dot:hover {
-  background-color: #FFFFFF;
-}
-
 
 .fade {
   -webkit-animation-name: fade;
@@ -313,17 +349,16 @@ h1 {
   to {opacity: 1}
 }
 
-
 footer {
-    font-size:90%;
-    color:white;
+    position:absolute;
+    font-size:80%;
+    color:lightgray;
     right: 0;
-    bottom: 0;
+    margin-bottom: 0;
     left: 0;
     height: 8vh;
     background-color: transparent;
     text-align: center;
-    padding:25px;
 }
 
 footer .footerElement {
@@ -331,6 +366,7 @@ footer .footerElement {
 }
 
 footer a {
+    color:white;
     text-decoration: underline;
 }
 
@@ -427,7 +463,15 @@ footer a:hover {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
+    
+    .mainNavBackground {
+        display:none;
+    }
+    
+    .socialNavBackgroundRight {
+        display: none;
+    }
     
     .mainNav {
         background-color:black;
@@ -436,25 +480,23 @@ footer a:hover {
         transform:none;
         animation: 1.2s ease-out 0s 1 slideInFromLeft;
         z-index: 1;
-        width: 100vw;
+        width: 100%;
         text-align: justify;
     }
     
     .mainNav li:not(:first-child){
         display: none;
-        left:0;
-        top:0;
-        padding-left:10px;
     }
     
     .mainNav li.icon {
-        font-size:3em;
+        position: absolute; !important;
+        font-size:2.5em;
         display:block;
-        position: absolute;
         border:transparent;
         margin-left:75vw;
-        top:20%;
-        height:90%;
+        top:-20px;
+        left:20vw;
+        height:100%;
     }    
     
     .mainNav.mobile li {
@@ -463,21 +505,14 @@ footer a:hover {
         width: calc(100vw - 0em);
         left:0em;
         display:block;
-        background-color:black;
-    }
-    
-    .mainNav.mobile #innerIcon {
-    }
-    
-    .mainNav #innerIcon {
-        border:none;
-        top:-2vh;
+        background-color:black;;
     }
     
     #logo {
-        top:vh;
-        left:10px;
-        width:4.3em;
+        position:absolute;
+        padding:0;
+        left:20px;
+        top:20px;
     }
     
     #firstMenuItem {
@@ -489,8 +524,9 @@ footer a:hover {
     }
     
     .content {
-        width: calc(100vw - 3.6em);
-        left:-15vw;
+        width: calc(100vw - 7vw);
+        
+        left:-7vw;
     }
     
     .socialNavBackgroundTop {
@@ -500,8 +536,8 @@ footer a:hover {
         z-index: 0;
         transform: none;
         margin-left:0vw;
-        height:10vh;
-        width: 100vw;
+        height:15vh;
+        width: 100%;
     }
     
     .socialNavBackgroundBottom {
@@ -512,7 +548,7 @@ footer a:hover {
         transform: none;
         margin-left:0vw;
         margin-top:90vh;
-        height:10vh;
+        height:15vh;
         width: 100vw;
     }
     
@@ -523,8 +559,8 @@ footer a:hover {
         transform: none;
         margin-left:0vw;
         margin-top:90vh;
-        height:10vh;
-        width: 100vw;
+        height:80px;
+        width: 100%;
         text-align: justify;
         animation: 1.2s ease-out 0s 1 slideInFromRight;
     }
@@ -561,6 +597,7 @@ footer a:hover {
     }
     
 }
+
 
 @media (min-width:320px)
 @media (min-width:481px)
