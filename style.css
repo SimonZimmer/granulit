@@ -73,7 +73,7 @@ h1 {
     text-decoration: none;
     color:white;
     cursor: pointer;
-    padding:10px;
+    padding:8px;
     border: solid transparent;
     border-width: 2px;
     z-index:6;
@@ -106,7 +106,7 @@ h1 {
 }
 
 .lastMainNavItem {
-    margin-left:2vh;
+    margin-left:1vh;
     font-size:80%;
     color: red;
     text-decoration: none;
