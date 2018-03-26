@@ -482,6 +482,10 @@ footer a:hover {
 }
 
 @media screen and (max-width: 660px) {
+    
+    #landingPage {
+        width: 100vw;
+    }
 
     .mainNavBackground {
         position: absolute;
@@ -534,6 +538,10 @@ footer a:hover {
         display:block;
         background-color:black;
         padding-left:15px;
+    }
+    
+    .lastMainNavItem {
+        margin-left:0vh;
     }
     
     #logo {
