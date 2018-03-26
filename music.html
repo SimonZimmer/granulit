@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
@@ -13,10 +14,10 @@
     
     <div class="mainNav" id="mainNav">
         <li><a id="logo" href="index.html">GRANULIT:</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a id="firstMenuItem" href="gallery.html">GALLERY</a></li>
         <li><a href="bio.html">BIO</a></li>
         <li><a href="contact.html">CONTACT</a></li>
-        <li><a id="lastNavItem" target="_blank" href="http://exolarmusic.com/">EXOLAR</a></li>
+        <li><a class="lastMainNavItem" id="newsletter">newsletter</a></li>
         <li class="icon" onclick="adaptNav()"><a href="javascript:void(0);" id="innerIcon">&#9776;</a></li>
     </div>
     <div class=mainNavBackground></div>
@@ -32,27 +33,28 @@
     <div class="content">
         
     <div class="text" href="contact.html">
-            Here is some music that you can download free of charge.<br>
-            All you have to do is subscribe to the newsletter, from which you will get only the most important info on things I'll do in the future.<br>
+            EPs and Singles:<br>
             <br>
         </div>
         
         <div class=embeddedBc>
-            <iframe id="dl1" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=4038965765/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://granulit.bandcamp.com/album/enthalpy-ep">Enthalpy EP by Granulit &amp; Working Dog</a></iframe>
+            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=4038965765/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://granulit.bandcamp.com/album/enthalpy-ep">Enthalpy EP by Granulit &amp; Working Dog</a></iframe>  
 
-            <iframe id="dl2" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=4220893263/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a hsref="http://granulit.bandcamp.com/track/detached">Detached by Granulit</a></iframe>
+            <iframe src="https://bandcamp.com/EmbeddedPlayer/track=4220893263/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://granulit.bandcamp.com/track/detached">Detached by Granulit</a></iframe>
         </div>
         
         <div class="text">
-            listen to some DJ-Mixes here:<br>
+            <br><br>
+            DJ-Mixes and Podcasts:<br>
+            <br>
         </div>
         
         <div class="embeddedSc">
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/321627713&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/384566138&color=%23191918&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
         </div>
         
         <div class="embeddedSc">
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/384566138&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/321627713&color=%23191918&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
         </div>
     </div>
     
