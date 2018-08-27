@@ -3,73 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
-  type="text/javascript"></script>
-    
-<div id="fb-root"></div>
-    
+  type="text/javascript">
+    </script>
+    <div id="fb-root"></div>
 </head>
 <body>
-    
-    <div class="mainNav" id="mainNav">
-        <li><a id="logo" href="index.html">GRANULIT:</a></li>
-        <li><a id="firstMenuItem" href="gallery.html">GALLERY</a></li>
-        <li><a href="bio.html">BIO</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a class="lastMainNavItem" id="newsletter" onClick="subscribe()">newsletter</a></li>
-        <li class="icon" onclick="adaptNav()"><a href="javascript:void(0);" id="innerIcon">&#9776;</a></li>
-    </div>
-    <div class=mainNavBackground></div>
-    
-    <div id="socialNav"></div>
 
-    <div class="currentNav">
-        <h1>
-            MUSIC:
-        </h1>
+<pre class="mainNav">
+initializing...
+
+<span class="var-highlight">Website</span> <span class="logo" onclick="window.location.replace('index.html')"> granulit </span> =
+{
+    menu:[<span class="string-highlight">'Music'</span>,
+          <span class="string-highlight">'Gallery'</span>,
+          <span class="string-highlight" id="target">'Biography'</span>,
+          <span class="string-highlight">'Contact'</span>];
+}; 
+
+//===================================================
+</pre>
+    
+<pre id="typewriter">
+loading category...
+
+<span class="var-highlight">content</span> <span class="logo" onclick="window.location.replace('index.html')"> ('music') </span> =
+EPs and singles()
+{
+    "ingress"
+    <div id="embeddedBc">
+    </div>
+}
+
+DJ-Mixes and Podcasts()
+{
+    "Haut und Knochen Vinyl Only"
+    <div id="embeddedSc">
+    </div>
+}
+</pre>
+    
+<!--  
+<div class="embeddedBc">
+<iframe src="https://bandcamp.com/EmbeddedPlayer/track=2534251020/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless></iframe>
+</div>
+-->
+    
+<!--    
+
+<pre id="typewriter">
+DJ-Mixes and Podcasts()
+{
+<span class="embeddedSc">
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/384566138&color=%23191918&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+</span>
+}
+</pre>-->
+    
+
+    <div id="socialNav" class="animInTop">
     </div>
 
-    <div class="content">
-        
-    <div class="text" href="contact.html">
-            EPs and Singles:<br>
-            <br>
-        </div>
-        
-        <div class=embeddedBc>
-            <iframe src="https://bandcamp.com/EmbeddedPlayer/track=2534251020/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://granulit.bandcamp.com/track/ingress">ingress by Granulit</a></iframe>
-        </div>
-        
-        <div class="text">
-            <br><br>
-            DJ-Mixes and Podcasts:<br>
-            <br>
-        </div>
-        
-        <div class="embeddedSc">
-            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/384566138&color=%23191918&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-        </div>
-        
-        <div class="embeddedSc">
-            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/321627713&color=%23191918&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-        </div>
+    <div class="content" style="padding:0;">
     </div>
-    
-    <script 
-        type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">
-        function subscribe() {
-            require(["mojo/signup-forms/Loader"], 
-            function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"898dfcb7ad3a2ae5731a2cbd5","lid":"4f2cf320f4"}) })
-        }
+
+    <script
+    type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
     </script>
+    
+    <script type="text/javascript">
+    function subscribe() {
+        require(["mojo/signup-forms/Loader"], 
+        function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"898dfcb7ad3a2ae5731a2cbd5","lid":"4f2cf320f4"}) })
+    }; 
+    </script>  
     
     <footer>
         <div class="footerElement">subscribe to the <a id="newsletter" onClick="subscribe()">newsletter</a></div>
-        <div class="fb-like" data-href="https://www.facebook.com/Granulit/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
         <a id="impressum" target="_blank" href="impressum.html">Impressum/DSGVO</a>
     </footer>
     
 </body>
+    
+<script src="./typewriter.js"></script>
 <script src="./javascript.js"></script>
+<script src="./category_loader.js"></script>
+    
 </html>
+

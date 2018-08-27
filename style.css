@@ -23,11 +23,12 @@ body  {
 #typewriter{
     color: #EFDAB9 !important;
         font-size: 1em;
-        margin: 1em;
+        margin-left: 1em;
         font-family: 'Roboto Mono', monospace !important;
 
         &:after{
             content: "|";
+            color: white; !important
             animation: blink 500ms linear infinite alternate;
         }
 }
@@ -68,6 +69,14 @@ footer a:hover{
     text-decoration: underline;
 }
 
+.mainNav {
+    color: #EFDAB9 !important;
+    font-size: 1em;
+    margin: 1em;
+    margin-top: 0em;
+    font-family: 'Roboto Mono', monospace !important;
+}
+
 .socialNavContainer {
 }
 
@@ -84,13 +93,43 @@ footer a:hover{
     height: 0.75em;
 }
 
-.lastSocialItem {
-    
+#lastSocialNavItem {
+    color: white;
+    text-decoration: none;
 }
+
+
 #socialText {
-    padding: 2em;
-    font-size: 0.5em;
+    padding-top: 5em;
+    padding-left: 1em;
+    font-size: 1em;
     color: white;
     white-space: nowrap;
     display: table-cell;
+}
+
+#bio {
+    display: inline-block;
+    color:red; !important
+}
+
+
+
+/*MUSIC*/
+iframe {
+    margin-left:8em;
+    border: 0; 
+    height: calc(36vw - 0em);
+    width: calc(36vw - 0em);
+}
+
+.embeddedBc {
+    color: white;
+    display:inline-block;
+    margin-left:-4.5em; !important
+    border: 0; 
+}
+
+#embeddedBc {
+    color:white;
 }

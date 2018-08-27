@@ -7,8 +7,8 @@ function setupTypewriter(t) {
             tag = "",
             writingTag = false,
             tagOpen = false,
-            typeSpeed = 0.000001,
-        tempTypeSpeed = 0.000001;
+            typeSpeed = 1,
+        tempTypeSpeed = 1;
 
         var type = function() {
         
@@ -53,7 +53,7 @@ function setupTypewriter(t) {
 
             cursorPosition += 1;
             if (cursorPosition < HTML.length - 1) {
-                setTimeout(type, tempTypeSpeed);
+                setTimeout(type, tempTypeSpeed/10);
             }
 
         };

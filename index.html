@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
-  type="text/javascript"></script>
-    
-<div id="fb-root"></div>
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript">
+    </script>
+    <div id="fb-root"></div>
 </head>
-<body>
     
+<body>
 <pre id="typewriter">
 initializing...
 
 <span class="var-highlight">Website</span> <span class="logo" onclick="window.location.replace('index.html')"> granulit </span> =
 {
-    menu:[<span onclick="window.location.replace('music.html')" class="string-highlight">'Music'</span>,
-          <span onclick="window.location.replace('gallery.html')" class="string-highlight">'Gallery'</span>,
-          <span onclick="window.location.replace('bio.html')" class="string-highlight" >'Biography'</span>,
-          <span onclick="window.location.replace('contact.html')" class="string-highlight">'Contact'</span>];
+    menu:[<span class="string-highlight" onclick="window.location.replace('music.html')">'Music'</span>,
+          <span class="string-highlight" onclick="window.location.replace('gallery.html')">'Gallery'</span>,
+          <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'Biography'</span>,
+          <span class="string-highlight" onclick="window.location.replace('contact.html')">'Contact'</span>];
 }; 
+
+//===================================================
 </pre>
-    
+
     <div id="socialNav" class="animInTop"></div>
-    
-    <div class="content" style="padding:0;">
-    </div>
-    
+
     <script 
-    type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">
-    function subscribe() {
-        require(["mojo/signup-forms/Loader"], 
-        function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"898dfcb7ad3a2ae5731a2cbd5","lid":"4f2cf320f4"}) })
-    }
-    
-    window.onbeforeunload = function() {
-    document.getElementsByClassName("mainNav").style.webkitAnimationName = "SlideOutToTop";
-};
- 
+        type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">
+        function subscribe() {
+            require(["mojo/signup-forms/Loader"], 
+            function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"898dfcb7ad3a2ae5731a2cbd5","lid":"4f2cf320f4"}) })
+        }
+    };
+
     </script>  
+    
     <footer>
         <div class="footerElement">subscribe to the <a id="newsletter" onClick="subscribe()">newsletter</a></div>
         <a id="impressum" target="_blank" href="impressum.html">Impressum/DSGVO</a>
     </footer>
     
-</body>
+</body> 
+    
 <script src="./typewriter.js"></script>
 <script src="./javascript.js"></script>
+<script src="./category_loader.js"></script>
     
 </html>
