@@ -61,10 +61,8 @@ function setupTypewriter(t) {
         return {
             type: type
         };
-    }
-
-    var typer = document.getElementById('typewriter');
-
+    }    
+    
+    var typer = document.getElementsByClassName('typewriter');
     typewriter = setupTypewriter(typewriter);
-
-    typewriter.type();
+    typewriter.type();   

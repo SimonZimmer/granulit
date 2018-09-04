@@ -123,13 +123,10 @@ iframe {
     width: calc(36vw - 0em);
 }
 
-.embeddedBc {
-    color: white;
-    display:inline-block;
-    margin-left:-4.5em; !important
-    border: 0; 
+#embeddedBc {
+    margin-left: -5.5em;
 }
 
-#embeddedBc {
-    color:white;
+#embeddedSc {
+    margin-left: -5.5em;
 }
