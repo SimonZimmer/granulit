@@ -16,10 +16,10 @@ initializing...
 
 <span class="var-highlight">Website</span> <span class="logo" onclick="window.location.replace('index.html')"> granulit </span> =
 {
-    menu:[<span class="string-highlight">'Music'</span>,
-          <span class="string-highlight">'Gallery'</span>,
-          <span class="string-highlight" id="target">'Biography'</span>,
-          <span class="string-highlight">'Contact'</span>];
+    menu:[<span class="string-highlight" onclick="window.location.replace('music.html')">'Music'</span>,
+          <span class="string-highlight" onclick="window.location.replace('gallery.html')">'Gallery'</span>,
+          <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'Biography'</span>,
+          <span class="string-highlight" onclick="window.location.replace('contact.html')">'Contact'</span>];
 }; 
 
 //===================================================
@@ -28,51 +28,53 @@ initializing...
 <pre id="typewriter">
 loading category...
 
-<span class="var-highlight">content</span> <span class="logo" onclick="window.location.replace('index.html')"> ('biography') </span> =
+<span class="var-highlight">content</span> (<span class="string-highlight">'biography'</span>) =
 <span class="text">
-("Granulit is a Düsseldorf, Germany based producer 
-and DJ who currently discovers new musical terrain 
-in experimental techno. His signature sound 
-intertwines mystic harmonies and archaic drums 
-with heavily processed field recordings yielding 
-abstract motives. In a conflict of both intuitive
-and algorithmic gestures, complex and strange 
-atmospheres emerge, creating an obscure acoustic 
-scenery. The debut EP "undreamed" was released in 
-October 2015 on Black Hills Recordings. In 2017, 
-he joined Haut und Knochen, a creative collective 
-consisting of musicians, designers and art directors, 
-set out to combat the mainstream and revitalize the
-subculture as an inindependent event series. As a
-participant in the founding of the event series 
-Vertigo, he further curates the spectrum of 
-electronic music within the Düsseldorfer club-scene. 
-Granulit is engaged in several collaborative 
-efforts to branch out into other musical 
-territories. At the moment, he's working on a 
-few projects:
-            
-The Dark-Wave live-project Exolar, exploring 
-intersections between Techno and New Wave within the 
-framework of a live 
-performance. Granulit: sequencer, laptop, vocals and 
-self- made controllers.
-Guitarist Yannik Brehm: guitar, sequencer, 
-synthesizer.
-            
-A conceptual album as an attempt to fuse 
-technologically driven electronic music and 
-nature-inspired black metal, with the singer and 
-film-maker Ozan Tasci
+to_string
+("
+    Granulit is a Düsseldorf, Germany based producer 
+    and DJ who currently discovers new musical 
+    terrain in experimental techno. His signature 
+    sound intertwines mystic harmonies and archaic 
+    drums with heavily processed field recordings 
+    yielding abstract motives. In a conflict of both 
+    intuitive and algorithmic gestures, complex and 
+    strange atmospheres emerge, creating an obscure 
+    acoustic scenery. The debut EP "undreamed" was 
+    released in October 2015 on Black Hills Recordings. 
+    In 2017, he joined Haut und Knochen, a creative 
+    collective consisting of musicians, designers and 
+    art directors, set out to combat the mainstream 
+    and revitalize the subculture as an inindependent 
+    event series. As a participant in the founding 
+    of the event series Vertigo, he further curates 
+    the spectrum of electronic music within the 
+    Düsseldorfer club-scene. Granulit is also 
+    engaged in several collaborative projects in an
+    effort to branch out into other musical 
+    territories:
 
-An experimental EP with the Producer/DJ , pursuing 
-old- and new school Electro Aesthetics")
+    The Dark-Wave live-project Exolar, exploring 
+    intersections between Techno and New Wave within 
+    the framework of a live performance. 
+    Granulit: sequencer, laptop, vocals and 
+    self- made controllers.
+    Guitarist Yannik Brehm: guitar, sequencer, 
+    synthesizer.
+
+    A conceptual album as an attempt to fuse 
+    technologically driven electronic music and 
+    nature-inspired black metal, with the singer 
+    and film-maker Ozan Tasci
+
+    An experimental EP with the Producer/DJ, 
+    pursuing old- and new school Electro Aesthetics
+")
 </span>
 </pre> 
-
     <div id="socialNav" class="animInTop">
     </div>
-
+    
     <div class="content" style="padding:0;">
     </div>
 
@@ -89,7 +91,6 @@ old- and new school Electro Aesthetics")
         <div class="footerElement">subscribe to the <a id="newsletter" onClick="subscribe()">newsletter</a></div>
         <a id="impressum" target="_blank" href="impressum.html">Impressum/DSGVO</a>
     </footer>
-    
 </body>
     
 <script src="./typewriter.js"></script>

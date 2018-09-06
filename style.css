@@ -1,6 +1,6 @@
 body  {
-    background-color: black;
     font-family: 'Roboto Mono', monospace !important;
+    background-color: #1C1C1C;
 }
 
 .var-highlight{
@@ -25,12 +25,6 @@ body  {
         font-size: 1em;
         margin-left: 1em;
         font-family: 'Roboto Mono', monospace !important;
-
-        &:after{
-            content: "|";
-            color: white; !important
-            animation: blink 500ms linear infinite alternate;
-        }
 }
 
 @-webkit-keyframes blink{
@@ -129,4 +123,49 @@ iframe {
 
 #embeddedSc {
     margin-left: -5.5em;
+}
+
+.slideshowImage {
+    width : 90%;
+    margin-left:5vw;
+}
+
+#slideshow {
+    display: grid;
+}
+
+/*GALLERY*/
+
+#vimeo embed {
+position: absolute;
+top: 0;
+right: 5%;
+width: 90%;
+height: 100%;
+}
+
+#vimeo {
+z-index:10;
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 0px;
+height: 100%;
+overflow: hidden;
+}
+
+#youtube embed {
+position: absolute;
+top: 0;
+right: 5%;
+width: 90%;
+height: 100%;
+}
+
+#youtube {
+z-index:10;
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 0px;
+height: 100%;
+overflow: hidden;
 }
