@@ -13,13 +13,13 @@
 <!-----><pre class="mainNav">
 initializing...
 
-<span class="var-highlight">Website</span> <span class="logo" onclick="window.location.replace('index.html')"> granulit </span> =
+void <span class="var-highlight">Website</span><span class="logo" onclick="window.location.replace('index.html')">::granulit() </span>
 {
-    menu:[<span class="string-highlight" onclick="window.location.replace('music.html')">'music'</span>,
-          <span class="string-highlight" onclick="window.location.replace('gallery.html')">'gallery'</span>,
-          <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'biography'</span>,
-          <span class="string-highlight" onclick="window.location.replace('contact.html')">'contact'</span>];
-}; 
+    string menu_[<span class="string-highlight" onclick="window.location.replace('music.html')">'music'</span>,
+                 <span class="string-highlight" onclick="window.location.replace('gallery.html')">'gallery'</span>,
+                 <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'biography'</span>,
+                 <span class="string-highlight" onclick="window.location.replace('contact.html')">'contact'</span>];
+}
 
 //===================================================
 </pre>
@@ -31,9 +31,11 @@ loading category...
 
 video:
 {
-    <div id="youtube" onmouseover="scrollingOver()">
-    </div>
+    "DJ-Set @ die digitale Düsseldorf"
     <div id="vimeo" onmouseover="scrollingOver()">
+    </div>
+    "'Radau x Vertigo' open air rave, somewhere in Düsseldorf"
+    <div id="youtube" onmouseover="scrollingOver()">
     </div>
 }
 
@@ -53,11 +55,6 @@ photo:
     </body>
     
     <script>
-        
-        scrollingOver = function() {
-            
-        }
-        
         nonTypedContent = function() {
                 
             document.getElementById("youtube").innerHTML += "<embed src='https://www.youtube.com/embed/e2HN48icz-w'></embed>";
@@ -74,13 +71,6 @@ photo:
             }
         }
         partA(nonTypedContent);
-    
-    
-        /* 
-            document.getElementById("youtube").innerHTML += "<iframe src='https://www.youtube.com/embed/e2HN48icz-w' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
-        ocument.getElementById("vimeo").innerHTML = "<embed id='vimeo' src='https://player.vimeo.com/video/242955436?color=ffffff&title=0&byline=0&portrait=0'></embed>";
-            */
-        
     </script>   
     
 </html>

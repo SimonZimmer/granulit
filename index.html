@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript">
     </script>
+    <script src="./javascript.js"></script>
     <div id="fb-root"></div>
 </head>
     
@@ -15,12 +16,13 @@
 initializing...
 
 <span class="var-highlight">Website</span> <span class="logo" onclick="window.location.replace('index.html')"> granulit </span> =
+void <span class="var-highlight">Website</span><span class="logo" onclick="window.location.replace('index.html')">::granulit() </span>
 {
-    menu:[<span class="string-highlight" onclick="window.location.replace('music.html')">'Music'</span>,
-          <span class="string-highlight" onclick="window.location.replace('gallery.html')">'Gallery'</span>,
-          <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'Biography'</span>,
-          <span class="string-highlight" onclick="window.location.replace('contact.html')">'Contact'</span>];
-}; 
+    string menu_[<span class="string-highlight" onclick="window.location.replace('music.html')">'music'</span>,
+                 <span class="string-highlight" onclick="window.location.replace('gallery.html')">'gallery'</span>,
+                 <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'biography'</span>,
+                 <span class="string-highlight" onclick="window.location.replace('contact.html')">'contact'</span>];
+} 
 
 //===================================================
 </pre>
@@ -43,8 +45,10 @@ initializing...
     
 </body> 
     
-<script src="./typewriter.js"></script>
-<script src="./javascript.js"></script>
-<script src="./category_loader.js"></script>
+<script>
+    nonTypedContent = function() {
+    }
+    partA(nonTypedContent);
+</script> 
     
 </html>
