@@ -10,28 +10,18 @@
     <script src="./typewriter.js"></script>
 </head>
 <body>
-
-<pre class="mainNav">
-initializing...
-
-void <span class="var-highlight">Website</span><span class="logo" onclick="window.location.replace('index.html')">::granulit() </span>
-{
-    string menu_[<span class="string-highlight" onclick="window.location.replace('music.html')">'music'</span>,
-                 <span class="string-highlight" onclick="window.location.replace('gallery.html')">'gallery'</span>,
-                 <span class="string-highlight" onclick="window.location.replace('bio.html')" id="target">'biography'</span>,
-                 <span class="string-highlight" onclick="window.location.replace('contact.html')">'contact'</span>];
-}
-
-//===================================================
-</pre>
+    
+<div id="mainNav"></div>
     
 <pre id="typewriter">
 loading category...
 
-<span class="var-highlight">content</span> <span class="string-highlight">'contact'</span> =
+<span class= "type">void</span> <span class="var-highlight">content</span>::contact()
 <span class="text"> 
-to_string
-("
+{
+    to_string
+    ("
+    
     If you want to book me for an upcoming event, 
     are further interested in what I do or you want 
     to collaborate, feel free to get in touch:
@@ -40,14 +30,13 @@ to_string
     Düsseldorf, Germany
 
     mail to: granulitmusic@gmail.com
-")
+    
+    ")
+}
 </span>
 </pre>
 
-    <div id="socialNav" class="animInTop">
-    </div>
-
-    <div class="content" style="padding:0;">
+    <div id="socialNav">
     </div>
 
     <script 
@@ -56,7 +45,6 @@ to_string
         require(["mojo/signup-forms/Loader"], 
         function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"898dfcb7ad3a2ae5731a2cbd5","lid":"4f2cf320f4"}) })
     }
-    }; 
     </script>  
     
     <footer>
@@ -73,4 +61,3 @@ to_string
 </script> 
     
 </html>
-
