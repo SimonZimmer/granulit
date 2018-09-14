@@ -111,7 +111,7 @@ iframe {
 
 .slideshowImage {
     width : 90%;
-    margin-left: 2.5em;
+    margin-left: 4.5em;
 }
 
 #slideshow {
@@ -132,7 +132,7 @@ iframe {
 #vimeo {
     position: relative;
     padding-bottom: 56.25%;
-    left:2.5em;
+    left:4.5em;
     padding-top: 0px;
     height: 100%;
     overflow: hidden;
@@ -141,7 +141,7 @@ iframe {
 #youtube embed {
     position: absolute;
     top: 0;
-    left:2.5em;
+    left:4.5em;
     right: 0;
     width: 90%;
     height: 100%;
