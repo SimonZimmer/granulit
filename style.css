@@ -4,10 +4,10 @@ body  {
 }
 
 .var-highlight{
-    color: #FFC31F;
+    color: #FF936B;
 }
 .string-highlight{
-    color: #659CC8;
+    color: #F13E00;
 }
 
 .string-highlight:hover{
@@ -25,7 +25,7 @@ body  {
 }
 
 #typewriter{
-    color: #EFDAB9 !important;
+    color: #D3D3D3 !important;
         font-size: 1em;
         margin-left: 1em;
         font-family: 'Roboto Mono', monospace !important;
@@ -36,11 +36,11 @@ footer {
     padding-left:0;
     margin-left: 0.8em;
     padding-top: 1em;
-    color: #EFDAB9 
+    color: #D3D3D3 
 }
 
 footer a {
-    color: #EFDAB9 
+    color: #D3D3D3 
 }
 
 footer a:hover{
@@ -53,7 +53,7 @@ footer a:hover{
 }
 
 .mainNav {
-    color: #EFDAB9 !important;
+    color: #D3D3D3 !important;
     font-size: 1em;
     margin: 1em;
     margin-top: 0em;
@@ -157,7 +157,7 @@ iframe {
 }
 
 .impressum {
-    color: #EFDAB9 !important;
+    color: #D3D3D3 !important;
     font-size: 1em;
     margin-left: 1em;
     font-family: 'Roboto Mono', monospace !important;
