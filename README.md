@@ -1,2 +1,0 @@
-# granulit
-granulit website
