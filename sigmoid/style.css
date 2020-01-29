@@ -171,6 +171,28 @@ iframe {
     margin-left: 4em;
 }
 
+a:link {
+    color: #F13E00;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 pre {
     white-space: pre-wrap; /* CSS3 */
     white-space: -moz-pre-wrap; /* Mozilla, post millennium */
