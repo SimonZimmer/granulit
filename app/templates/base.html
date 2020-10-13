@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='stylesheets/style.css') }}>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     </head>
     <body>
-        <pre>
+        <pre id="typewriter">
 
 
     initializing...
@@ -44,7 +44,7 @@
                 </div>
             </div>
         <div class=socialNavBackground></div>
-            <a id="impressum" target="_blank" onclick="window.location.replace('impressum')">Impressum/DSGVO</a>
+            <a id="impressum" target="_blank" onclick="window.location.replace('impressum')"> Impressum/DSGVO </a>
         </footer>
     </body>
 </html>
