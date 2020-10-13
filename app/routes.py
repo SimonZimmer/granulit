@@ -3,7 +3,7 @@ from flask import render_template
 
 @app.route('/')
 def index():
-    return render_template('header.html')
+    return render_template('base.html')
 
 @app.route('/audio')
 def audio():
@@ -20,3 +20,7 @@ def contact():
 @app.route('/bio')
 def bio():
     return render_template('bio.html')
+
+@app.route('/impressum')
+def impressum():
+    return render_template('impressum.html')
