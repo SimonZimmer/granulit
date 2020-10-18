@@ -1,5 +1,7 @@
 from app import app
 from flask import render_template
+import os
+
 
 @app.route('/')
 def index():
@@ -11,7 +13,8 @@ def audio():
 
 @app.route('/video')
 def video():
-    return render_template('video.html')
+    images = [image for image in os.listdir("./app/static/images") if image.endswith(".jpg")]
+    return render_template('video.html', images=images)
 
 @app.route('/contact')
 def contact():

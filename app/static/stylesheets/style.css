@@ -1,8 +1,8 @@
 body  {
     font-family: 'Roboto Mono', monospace !important;
     background-color: #1C1C1C;
+    padding-right: 5%;
 }
-
 .var-highlight{
     color: #FF936B;
 }
@@ -14,11 +14,9 @@ body  {
     color:white;
     cursor: pointer;
 }
-
 .type {
     color:white;
 }
-
 .logo:hover{
     color:white;
     cursor: pointer;
@@ -26,35 +24,17 @@ body  {
 
 #typewriter{
     color: #D3D3D3 !important;
-        font-size: 1em;
-        margin-left: 1em;
-        font-family: 'Roboto Mono', monospace !important;
+    font-size: 90%;
+    margin:0;
+    font-family: 'Roboto Mono', monospace !important;
 }
 
-footer {
-    font-size: 0.8em;
-    padding-left:0;
-    margin-left: 0.8em;
-    padding-top: 1em;
-    color: #D3D3D3 
-}
-
-footer a {
-    color: #D3D3D3 
-}
-
-footer a:hover{
-    cursor: pointer;
-    color: white
-}
-
-#newsletter {
-    text-decoration: underline;
+.textblock {
+    padding-left : 8em;
 }
 
 .mainNav {
     color: #D3D3D3 !important;
-    font-size: 1em;
     margin: 1em;
     margin-top: 0em;
     font-family: 'Roboto Mono', monospace !important;
@@ -65,61 +45,30 @@ footer a:hover{
     text-align: left;
 }
 
-.social-link {
-    height: 0.75em;
-}
-
-.social-link .a{
-    height: 0.75em;
-}
-
-#lastSocialNavItem {
-    color: white;
-    text-decoration: none;
-}
-
-
-#socialText {
-    padding-top: 5em;
-    padding-left: 1em;
-    font-size: 1em;
-    color: white;
-    white-space: nowrap;
-    display: table-cell;
-}
-
 #bio {
     display: inline-block;
     color:red; !important
 }
 
+
 /*MUSIC*/
 iframe {
-    margin-left:8em;
-    border: 0; 
-    height: calc(36vw - 0em);
-    width: calc(36vw - 0em);
-}
-
-#embeddedBc {
-    margin-left: -3em;
-}
-
-#embeddedSc {
-    margin-left: -3em;
+    height: 60vw;
+    width: 60vw;
 }
 
 .slideshowImage {
     width : 90%;
-    margin-left: 4.5em;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 #slideshow {
     display: grid;
 }
 
-/*GALLERY*/
-
+/*video*/
 #vimeo embed {
     position: absolute;
     margin-top: -1em;
@@ -128,11 +77,9 @@ iframe {
     width: 90%;
     height: 90%;
 }
-
 #vimeo {
     position: relative;
     padding-bottom: 56.25%;
-    left:4.5em;
     padding-top: 0px;
     height: 100%;
     overflow: hidden;
@@ -141,12 +88,11 @@ iframe {
 #youtube embed {
     position: absolute;
     top: 0;
-    left:4.5em;
+    left: 0;
     right: 0;
     width: 90%;
     height: 100%;
 }
-
 #youtube {
     z-index:10;
     position: relative;
@@ -156,24 +102,27 @@ iframe {
     overflow: hidden;
 }
 
-.impressum {
-    color: #D3D3D3 !important;
-    font-size: 1em;
-    margin-left: 1em;
-    font-family: 'Roboto Mono', monospace !important;
+/*footer*/
+footer {
+    font-size: 0.8em;
+    padding-left: 0;
+    margin-left: 2.75em;
+    padding-top: 1em;
+    padding-bottom: 5em;
+    color: #D3D3D3;
+}
+footer a:hover{
+    cursor: pointer;
+    color: white
 }
 
 .impressum {
-    font-size:100%;
-    text-align: block;
-    line-height: 1.3;
     color:lightgray;
-    margin-left: 8em;
 }
 
+/*behaviour*/
 a:link {
     color: #F13E00;
-    background-color: transparent;
     text-decoration: none;
 }
 
@@ -194,6 +143,8 @@ a:active {
 }
 
 pre {
+    padding: 0;
+    overflow-x: auto;
     white-space: pre-wrap; /* CSS3 */
     white-space: -moz-pre-wrap; /* Mozilla, post millennium */
     white-space: -pre-wrap; /* Opera 4-6 */
