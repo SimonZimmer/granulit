@@ -14,9 +14,12 @@
                 <embed src='https://www.youtube.com/embed/Sn2Ag1kGFLM'></embed>
             </div>
         )
-
+        </div>
+        <pre id="typewriter">
         // photo:
         (
+        </pre>
+        <div id="typewriter" class="textblock">
         <div id="slideshow">
             {% for image in images %}
             <img src= {{ url_for('static', filename="images/" + image) }} class='slideshowImage'></img>
@@ -24,6 +27,7 @@
         </div>
         )
         </div>
+    <pre id="typewriter">
     }
     </pre>
 {% endblock %}
