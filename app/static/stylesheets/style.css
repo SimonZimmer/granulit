@@ -22,7 +22,7 @@ body  {
     cursor: pointer;
 }
 
-#typewriter{
+.typewriter{
     color: #D3D3D3 !important;
     font-size: 90%;
     margin:0;
@@ -53,15 +53,19 @@ body  {
 
 /*MUSIC*/
 iframe {
-    height: 60vw;
-    width: 60vw;
+    height: 30vw;
+    width: 30vw;
+    display: grid;
+    paddiing-top: 0.5em;
+    padding-left: 4.5em;
 }
 
 .slideshowImage {
-    width : 90%;
+    width : 30vw;
     top: 0;
     left: 0;
     right: 0;
+    padding-left: 4.5em;
 }
 
 #slideshow {
@@ -69,34 +73,15 @@ iframe {
 }
 
 /*video*/
-#vimeo embed {
-    position: absolute;
-    margin-top: -1em;
-    left:0em;
-    right: 0;
-    width: 90%;
-    height: 90%;
-}
-#vimeo {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 0px;
-    height: 100%;
-    overflow: hidden;
-}
-
 #youtube embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 90%;
-    height: 100%;
+    width: 30vw;
+    height: 30vw;
+    padding-top: 0.5em;
+    padding-left: 4.5em;
 }
 #youtube {
     z-index:10;
     position: relative;
-    padding-bottom: 56.25%;
     padding-top: 0px;
     height: 100%;
     overflow: hidden;
@@ -150,37 +135,4 @@ pre {
     white-space: -pre-wrap; /* Opera 4-6 */
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* Internet Explorer 5.5+ */
-}
-
-#typewriter {
-    width: 80%;
-    opacity: 0;
-    -webkit-animation: type3 1s steps(20, end);
-    animation: type3 1s steps(20, end);
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-@keyframes type3 {
-    0% {
-        width: 0;
-    }
-    1% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes type3 {
-    0% {
-        width: 0;
-    }
-    1% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
 }

@@ -1,33 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <pre id="typewriter">
+    <pre class="typewriter">
     loading category...
 
     <span class= "type">void</span> <span class="var-highlight">Content</span>::video()
     {
         // video:
-        (</pre>
-        <div id="typewriter" class="textblock">
-            "'Exolar - Computer Vision' 360° video and ambisonics audio"
-            <div id="youtube" onmouseover="scrollingOver()">
+        (
+
+        "'Exolar - Computer Vision' 360° video and ambisonics audio"
+        </pre>
+        <div id="youtube" onmouseover="scrollingOver()">
                 <embed src='https://www.youtube.com/embed/Sn2Ag1kGFLM'></embed>
-            </div>
+        </div>
         )
         </div>
-        <pre id="typewriter">
+        <pre class="typewriter">
         // photo:
         (
         </pre>
-        <div id="typewriter" class="textblock">
         <div id="slideshow">
             {% for image in images %}
             <img src= {{ url_for('static', filename="images/" + image) }} class='slideshowImage'></img>
             {% endfor %}
         </div>
+        <div class="textblock typwriter">
         )
         </div>
-    <pre id="typewriter">
+    <pre class="typewriter">
     }
     </pre>
 {% endblock %}
