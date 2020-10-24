@@ -297,3 +297,5 @@ GitHub.sublime-settings
 #
 #
 .DS_Store
+
+*.pyc

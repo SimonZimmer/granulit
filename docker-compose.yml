@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    app:
+        container_name: app
+        restart: always
+        build: ./flask/
+        ports:
+            - "5000:5000"
+        command: "gunicorn -w 1 -b :5000 hidonash:app"
+
+    nginx:
+        container_name: nginx
+        restart: always
+        build: ./nginx
+        volumes:
+            - ./flask/app/static:/static/
+        ports:
+            - "80:80"
+        depends_on:
+             - app
+
