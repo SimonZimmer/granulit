@@ -299,3 +299,4 @@ GitHub.sublime-settings
 .DS_Store
 
 *.pyc
+/data/certbot
