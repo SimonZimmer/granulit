@@ -58,7 +58,7 @@ iframe {
     width: 30vw;
     display: grid;
     padding-top: 0.5em;
-    padding-left: 10%;
+    padding-left: 10vh;
 }
 
 .slideshowImage {
@@ -78,7 +78,7 @@ iframe {
     width: 30vw;
     height: 30vw;
     padding-top: 0.5em;
-    padding-left: 10%;
+    padding-left: 10vh;
 }
 #youtube {
     z-index:10;
