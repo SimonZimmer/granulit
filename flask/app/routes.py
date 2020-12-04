@@ -4,6 +4,7 @@ import os
 from app.forms import LoginForm
 
 
+@app.route('/index')
 @app.route('/')
 def index():
     return render_template('base.html')
