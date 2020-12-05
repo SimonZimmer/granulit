@@ -1,4 +1,5 @@
 from app import db
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
@@ -21,7 +22,20 @@ class User(UserMixin, db.Model):
 
 class Bio(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
+    text = db.Column(db.String(300))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+    def __iter__(self):
+        yield "text", self.text
+
+    def latest(self):
+        try:
+            all_text = self.query.all()[-1]
+            return all_text
+        except:
+            pass
+
+        return {}
 
     def __repr__(self):
         return '<Bio {}>'.format(self.body)

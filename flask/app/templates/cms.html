@@ -1,7 +1,16 @@
 {% block content %}
     <h1>Content Management System</h1>
         <h2>Biography</h2>
-        <p>
-        </p>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.text.label }}<br>
+                {{ form.text(size=90) }}<br>
+                {% for error in form.text.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
 {% endblock %}
 
