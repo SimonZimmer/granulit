@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length
 
 class LoginForm(FlaskForm):
@@ -9,6 +9,6 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 class BioUpdateForm(FlaskForm):
-    text = StringField('New text', validators=[DataRequired(), Length(max=3000, message="message cannot exceed %(max)d characters")])
+    text = TextAreaField('New text', validators=[DataRequired(), Length(max=3000, message="message cannot exceed %(max)d characters")])
     submit = SubmitField('Update Bio')
 
