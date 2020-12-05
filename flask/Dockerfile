@@ -5,7 +5,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python \
     && ln -s /usr/bin/pip3 /usr/bin/pip
 
 # install basic needs
-RUN apt-get update && apt-get install vim -y &&
+RUN apt-get update && apt-get install vim -y
 
 # install python requirements
 COPY requirements.txt hidonash/requirements.txt
