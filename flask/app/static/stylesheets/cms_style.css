@@ -1,0 +1,12 @@
+body  {
+    font-family: 'Roboto Mono', monospace !important;
+    background-color: #1C1C1C;
+    color: white;
+    margin-left: 3em;
+}
+
+#text {
+    height: 20em;
+    width: 75em;
+}
+

@@ -9,6 +9,6 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 class BioUpdateForm(FlaskForm):
-    text = StringField('New text', validators=[DataRequired(), Length(max=300, message="message cannot exceed %(max)d characters")])
+    text = StringField('New text', validators=[DataRequired(), Length(max=3000, message="message cannot exceed %(max)d characters")])
     submit = SubmitField('Update Bio')
 

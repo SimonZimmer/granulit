@@ -22,7 +22,7 @@ class User(UserMixin, db.Model):
 
 class Bio(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String(300))
+    text = db.Column(db.String(3000))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __iter__(self):
