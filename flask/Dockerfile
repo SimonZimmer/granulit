@@ -5,18 +5,14 @@ RUN ln -s /usr/bin/python3 /usr/bin/python \
     && ln -s /usr/bin/pip3 /usr/bin/pip
 
 # install basic needs
-RUN apt-get update && apt-get install vim -y
+RUN apt-get update && apt-get install -y \
+    vim \
+    git
+
+RUN git clone --recurse-submodules https://github.com/SimonZimmer/hidonash-website.git hidonash
 
 # install python requirements
-COPY requirements.txt hidonash/requirements.txt
-RUN pip install -r hidonash/requirements.txt
-
-# install application
-RUN mkdir -p /hidonash
-COPY app /hidonash/app
-COPY hidonash.py /hidonash/hidonash.py
-COPY config.py /hidonash/config.py
-COPY migrations /hidonash/migrations
+RUN pip install -r hidonash/flask/requirements.txt
 
 COPY entrypoint.sh /hidonash/entrypoint.sh
 RUN chmod +x /hidonash/entrypoint.sh
