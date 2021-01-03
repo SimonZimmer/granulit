@@ -9,10 +9,14 @@ RUN apt-get update && apt-get install -y \
     vim \
     git
 
-RUN git clone --recurse-submodules https://github.com/SimonZimmer/hidonash-website.git hidonash
+# install pip requirements
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
 
-# install python requirements
-RUN pip install -r hidonash/flask/requirements.txt
+COPY app /hidonash/app
+COPY hidonash.py /hidonash/hidonash.py
+COPY config.py /hidonash/config.py
+COPY migrations /hidonash/migrations
 
 COPY entrypoint.sh /hidonash/entrypoint.sh
 RUN chmod +x /hidonash/entrypoint.sh
