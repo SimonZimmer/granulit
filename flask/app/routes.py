@@ -12,27 +12,33 @@ from app.models import User, Bio
 def index():
     return render_template('base.html')
 
+
 @app.route('/audio')
 def audio():
     return render_template('audio.html')
+
 
 @app.route('/video')
 def video():
     images = [image for image in os.listdir("./app/static/images") if image.endswith(".jpg")]
     return render_template('video.html', images=images)
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
 
 @app.route('/bio')
 def bio():
     text = Bio().latest()
     return render_template('bio.html', data=dict(text))
 
+
 @app.route('/impressum')
 def impressum():
     return render_template('impressum.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -48,10 +54,12 @@ def login():
         return redirect(url_for('cms'))
     return render_template('login.html', title='Sign In', form=form)
 
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
 
 @app.route('/cms', methods=['GET', 'POST'])
 @login_required
@@ -63,5 +71,9 @@ def cms():
         db.session.add(text)
         db.session.commit()
         return redirect(url_for('bio'))
+    else:
+        try:
+            form.text.data = Bio().latest().text
+        except:
+            pass
     return render_template('cms.html', form=form)
-

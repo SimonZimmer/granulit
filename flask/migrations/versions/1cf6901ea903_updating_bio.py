@@ -1,8 +1,8 @@
-"""update bio
+"""updating bio
 
-Revision ID: 763e2f9caf54
+Revision ID: 1cf6901ea903
 Revises: 1837077807ac
-Create Date: 2020-12-05 19:12:49.265086
+Create Date: 2021-01-03 16:20:41.351378
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '763e2f9caf54'
+revision = '1cf6901ea903'
 down_revision = '1837077807ac'
 branch_labels = None
 depends_on = None

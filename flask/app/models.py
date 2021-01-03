@@ -39,8 +39,8 @@ class Bio(db.Model):
 
     def __repr__(self):
         return '<Bio {}>'.format(self.body)
+    
 
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
-
