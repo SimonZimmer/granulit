@@ -3,8 +3,8 @@ from app import db
 from flask import render_template, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 import os
-from app.forms import LoginForm, BioUpdateForm
-from app.models import User, Bio
+from app.forms import LoginForm, ContentUpdateForm 
+from app.models import User, Content
 
 
 @app.route('/index')
@@ -15,7 +15,8 @@ def index():
 
 @app.route('/audio')
 def audio():
-    return render_template('audio.html')
+    content = Content().latest()
+    return render_template('audio.html', data=dict(content))
 
 
 @app.route('/video')
@@ -31,8 +32,8 @@ def contact():
 
 @app.route('/bio')
 def bio():
-    text = Bio().latest()
-    return render_template('bio.html', data=dict(text))
+    content = Content().latest()
+    return render_template('bio.html', data=dict(content))
 
 
 @app.route('/impressum')
@@ -64,16 +65,19 @@ def logout():
 @app.route('/cms', methods=['GET', 'POST'])
 @login_required
 def cms():
-    form = BioUpdateForm()
+    form = ContentUpdateForm()
     if form.validate_on_submit():
-        flash(f'text: {form.text.data}')
-        text = Bio(text=form.text.data)
-        db.session.add(text)
+        content = Content(bio=form.bio.data, releases=form.releases.data)
+        db.session.add(content)
         db.session.commit()
-        return redirect(url_for('bio'))
+        flash('changes updated successfully.')
+        return redirect(url_for('cms'))
     else:
         try:
-            form.text.data = Bio().latest().text
+            form.bio.data = Content().latest().bio
+            form.releases.data = Content().latest().releases
         except:
             pass
-    return render_template('cms.html', form=form)
+
+    return render_template('cms.html', form=form) 
+

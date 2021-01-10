@@ -10,9 +10,14 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 
-class BioUpdateForm(FlaskForm):
-    text = TextAreaField('Biography Text',
+class ContentUpdateForm(FlaskForm):
+    bio = TextAreaField('Biography Text',
                          validators=[DataRequired(),
                                      Length(max=3000,
                                      message="message cannot exceed %(max)d characters")])
-    submit = SubmitField('Update')
+    releases = TextAreaField('Releases Embedded Links',
+                         validators=[DataRequired(),
+                                     Length(max=30000,
+                                     message="message cannot exceed %(max)d characters")])
+    submit = SubmitField('Submit')
+

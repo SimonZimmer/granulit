@@ -20,13 +20,14 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-class Bio(db.Model):
+class Content(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String(3000))
+    bio = db.Column(db.String(3000))
+    releases = db.Column(db.String(30000))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __iter__(self):
-        yield "text", self.text
+        yield "content", {'bio': self.bio, 'releases': self.releases}
 
     def latest(self):
         try:
@@ -38,9 +39,10 @@ class Bio(db.Model):
         return {}
 
     def __repr__(self):
-        return '<Bio {}>'.format(self.body)
-    
+        return '<Content {}>'.format(self.id)
+
 
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
