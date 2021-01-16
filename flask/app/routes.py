@@ -28,7 +28,8 @@ def video():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    content = Content().latest()
+    return render_template('contact.html', data=dict(content))
 
 
 @app.route('/bio')
@@ -64,14 +65,15 @@ def logout():
 
 
 @app.route('/cms', methods=['GET', 'POST'])
-#@login_required
+@login_required
 def cms():
     form = ContentUpdateForm()
     if form.validate_on_submit():
         content = Content(bio=form.bio.data,
                           releases=form.releases.data,
                           podcasts=form.podcasts.data,
-                          videos=form.videos.data)
+                          videos=form.videos.data,
+                          contact=form.contact.data)
         db.session.add(content)
         db.session.commit()
         flash('changes updated successfully.')
@@ -82,6 +84,7 @@ def cms():
             form.releases.data = Content().latest().releases
             form.podcasts.data = Content().latest().podcasts
             form.videos.data = Content().latest().videos
+            form.contact.data = Content().latest().contact
         except:
             pass
 

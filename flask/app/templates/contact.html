@@ -10,15 +10,11 @@
         to_string
         (" </pre>
         <div class="textblock typewriter">
-        If you are further interested in what I do, feel free to get in touch:
 
-        <a class="mailto" href="mailto:mail@hidonash.de">mail@hidonash.de</a>
-
-        Simon Zimmermann
-        Düsseldorf, Germany
+        {{ data.content.contact | safe }}
 
         </div>
-<pre class="typewriter">
+        <pre class="typewriter">
         ")
     } </pre>
 {% endblock %}

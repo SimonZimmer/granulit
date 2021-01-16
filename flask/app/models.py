@@ -26,13 +26,15 @@ class Content(db.Model):
     releases = db.Column(db.String(30000))
     podcasts = db.Column(db.String(30000))
     videos = db.Column(db.String(30000))
+    contact = db.Column(db.String(5000))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __iter__(self):
         yield "content", {'bio': self.bio, 
                           'releases': self.releases,
                           'podcasts': self.podcasts,
-                          'videos': self.videos}
+                          'videos': self.videos,
+                          'contact': self.contact}
 
     def latest(self):
         try:
