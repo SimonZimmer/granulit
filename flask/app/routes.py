@@ -22,7 +22,8 @@ def audio():
 @app.route('/video')
 def video():
     images = [image for image in os.listdir("./app/static/images") if image.endswith(".jpg")]
-    return render_template('video.html', images=images)
+    content = Content().latest()
+    return render_template('video.html', images=images, data=dict(content))
 
 
 @app.route('/contact')
@@ -67,7 +68,10 @@ def logout():
 def cms():
     form = ContentUpdateForm()
     if form.validate_on_submit():
-        content = Content(bio=form.bio.data, releases=form.releases.data, podcasts=form.podcasts.data)
+        content = Content(bio=form.bio.data,
+                          releases=form.releases.data,
+                          podcasts=form.podcasts.data,
+                          videos=form.videos.data)
         db.session.add(content)
         db.session.commit()
         flash('changes updated successfully.')
@@ -77,6 +81,7 @@ def cms():
             form.bio.data = Content().latest().bio
             form.releases.data = Content().latest().releases
             form.podcasts.data = Content().latest().podcasts
+            form.videos.data = Content().latest().videos
         except:
             pass
 

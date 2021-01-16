@@ -23,5 +23,9 @@ class ContentUpdateForm(FlaskForm):
                          validators=[DataRequired(),
                                      Length(max=30000,
                                      message="message cannot exceed %(max)d characters")])
+    videos = TextAreaField('Video Embedded Links',
+                         validators=[DataRequired(),
+                                     Length(max=30000,
+                                     message="message cannot exceed %(max)d characters")])
     submit = SubmitField('Submit')
 
