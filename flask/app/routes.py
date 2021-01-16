@@ -63,11 +63,11 @@ def logout():
 
 
 @app.route('/cms', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def cms():
     form = ContentUpdateForm()
     if form.validate_on_submit():
-        content = Content(bio=form.bio.data, releases=form.releases.data)
+        content = Content(bio=form.bio.data, releases=form.releases.data, podcasts=form.podcasts.data)
         db.session.add(content)
         db.session.commit()
         flash('changes updated successfully.')
@@ -76,6 +76,7 @@ def cms():
         try:
             form.bio.data = Content().latest().bio
             form.releases.data = Content().latest().releases
+            form.podcasts.data = Content().latest().podcasts
         except:
             pass
 

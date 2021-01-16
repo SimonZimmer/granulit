@@ -19,5 +19,9 @@ class ContentUpdateForm(FlaskForm):
                          validators=[DataRequired(),
                                      Length(max=30000,
                                      message="message cannot exceed %(max)d characters")])
+    podcasts = TextAreaField('Podcasts Embedded Links',
+                         validators=[DataRequired(),
+                                     Length(max=30000,
+                                     message="message cannot exceed %(max)d characters")])
     submit = SubmitField('Submit')
 
