@@ -7,6 +7,8 @@ services:
         build: ./flask/
         ports:
             - "5000:5000"
+        volumes:
+            - ${PWD}/flask/:/hidonash/
         command: "gunicorn -w 1 -b :5000 hidonash:app"
 
     nginx:

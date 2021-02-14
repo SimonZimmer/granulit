@@ -13,10 +13,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-COPY app /hidonash/app
 COPY hidonash.py /hidonash/hidonash.py
-COPY config.py /hidonash/config.py
-COPY migrations /hidonash/migrations
 
 COPY entrypoint.sh /hidonash/entrypoint.sh
 RUN chmod +x /hidonash/entrypoint.sh
