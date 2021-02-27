@@ -40,7 +40,8 @@ def bio():
 
 @app.route('/impressum')
 def impressum():
-    return render_template('impressum.html')
+    content = Content().latest()
+    return render_template('impressum.html', data=dict(content))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -65,7 +66,7 @@ def logout():
 
 
 @app.route('/cms', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def cms():
     form = ContentUpdateForm()
     if form.validate_on_submit():
@@ -73,7 +74,8 @@ def cms():
                           releases=form.releases.data,
                           podcasts=form.podcasts.data,
                           videos=form.videos.data,
-                          contact=form.contact.data)
+                          contact=form.contact.data,
+                          impressum=form.impressum.data)
         db.session.add(content)
         db.session.commit()
         flash('changes updated successfully.')
@@ -85,6 +87,7 @@ def cms():
             form.podcasts.data = Content().latest().podcasts
             form.videos.data = Content().latest().videos
             form.contact.data = Content().latest().contact
+            form.impressum.data = Content().latest().impressum
         except:
             pass
 

@@ -31,5 +31,10 @@ class ContentUpdateForm(FlaskForm):
                          validators=[DataRequired(),
                                      Length(max=5000,
                                      message="message cannot exceed %(max)d characters")])
+
+    impressum = TextAreaField('Impressum',
+                         validators=[DataRequired(),
+                                     Length(max=500000,
+                                     message="message cannot exceed %(max)d characters")])
     submit = SubmitField('Submit')
 
