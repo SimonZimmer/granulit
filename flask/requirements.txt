@@ -4,4 +4,5 @@ flask-sqlalchemy
 flask-migrate
 flask-login
 gunicorn
-
+pytest
+pytest-flask-sqlalchemy
