@@ -2,6 +2,7 @@ import unittest
 
 from app import create_app, db
 from config import TestConfig
+from app.models import User, Content
 
 
 class MainRoutesTestCase(unittest.TestCase):
@@ -33,30 +34,66 @@ class MainRoutesTestCase(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         self.assertTrue(b"::audio()" in response.data)
 
+        db.session.add(Content(releases="unique_data_release",
+                               podcasts="unique_data_podcast"))
+        db.session.commit()
+        response = self.testapp.get("/audio", follow_redirects=True)
+        self.assertTrue(b"unique_data_release" in response.data)
+        self.assertTrue(b"unique_data_podcast" in response.data)
+
     def test_video(self):
         response = self.testapp.get("/video", follow_redirects=True)
         self.assertEqual(200, response.status_code)
         self.assertTrue(b"::video()" in response.data)
+
+        db.session.add(Content(videos=b"unique_data_video"))
+        db.session.commit()
+        response = self.testapp.get("/video", follow_redirects=True)
+        self.assertEqual(200, response.status_code)
+        self.assertTrue(b"unique_data_video" in response.data)
 
     def test_contact(self):
         response = self.testapp.get("/contact", follow_redirects=True)
         self.assertEqual(200, response.status_code)
         self.assertTrue(b"::contact()" in response.data)
 
+        db.session.add(Content(contact="unique_contact_data"))
+        db.session.commit()
+        response = self.testapp.get("/contact", follow_redirects=True)
+        self.assertTrue(b"unique_contact_data" in response.data)
+
     def test_bio(self):
         response = self.testapp.get("/bio", follow_redirects=True)
         self.assertEqual(200, response.status_code)
         self.assertTrue(b"::bio()" in response.data)
+
+        db.session.add(Content(bio="unique_data_bio"))
+        db.session.commit()
+        response = self.testapp.get("/bio", follow_redirects=True)
+        self.assertTrue(b"unique_data_bio" in response.data)
 
     def test_impressum(self):
         response = self.testapp.get("/impressum", follow_redirects=True)
         self.assertEqual(200, response.status_code)
         self.assertTrue(b"::impressum()" in response.data)
 
+        db.session.add(Content(impressum="unique_data_impressum"))
+        db.session.commit()
+        response = self.testapp.get("/impressum", follow_redirects=True)
+        self.assertTrue(b"unique_data_impressum" in response.data)
+
     def test_cms(self):
         response = self.testapp.get("/cms", follow_redirects=True)
         self.assertEqual(200, response.status_code)
         self.assertTrue(b"<h1>Content Management System</h1>" in response.data)
+
+    def test_cms_update_content(self):
+        content = Content(bio="unique_data")
+        db.session.add(content)
+        db.session.commit()
+        response = self.testapp.get("/bio", follow_redirects=True)
+        self.assertEqual(200, response.status_code)
+        self.assertTrue(b"unique_data" in response.data)
 
 
 if __name__ == '__main__':
