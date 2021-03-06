@@ -22,5 +22,5 @@ EXPOSE 5000
 ENV FLASK_APP=hidonash.py
 ENV FLASK_ENV=development
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["bash", "./entrypoint.sh"]
 CMD ["flask", "run", "--host=0.0.0.0"]
