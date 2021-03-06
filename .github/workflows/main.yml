@@ -18,5 +18,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run tests
         run: |
-            docker build -t ${IMAGE_NAME} .
-            docker run ${IMAGE_NAME} bash -c "python -m unittest discover app/tests/"
+            docker build -t ${IMAGE_NAME} flask/.
+            docker run -v ${PWD}:/hidonash/ ${IMAGE_NAME} bash -c "python -m unittest discover"
