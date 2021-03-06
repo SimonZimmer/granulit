@@ -1,9 +1,8 @@
-name: unit tests
+name: tests
 
 on:
   push:
     branches:
-      - develop
       - master
 
   # Run tests for any PRs.
