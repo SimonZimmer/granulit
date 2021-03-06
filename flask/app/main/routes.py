@@ -1,6 +1,7 @@
 from app.main import bp
 from app import db
 from flask import render_template, flash, redirect, url_for
+from flask_login import login_required
 import os
 from app.main.forms import ContentUpdateForm
 from app.models import User, Content
@@ -15,7 +16,7 @@ def index():
 @bp.route('/audio')
 def audio():
     content = Content().latest() if Content().latest() else Content()
-    return render_template('audio.html', data=dict(content))
+    return render_template('main/audio.html', data=dict(content))
 
 
 @bp.route('/video')
@@ -25,29 +26,29 @@ def video():
     if os.path.exists(imageDirPath):
         images = [image for image in os.listdir(imageDirPath) if image.endswith(".jpg")]
     content = Content().latest() if Content().latest() else Content()
-    return render_template('video.html', images=images, data=dict(content))
+    return render_template('main/video.html', images=images, data=dict(content))
 
 
 @bp.route('/contact')
 def contact():
     content = Content().latest() if Content().latest() else Content()
-    return render_template('contact.html', data=dict(content))
+    return render_template('main/contact.html', data=dict(content))
 
 
 @bp.route('/bio')
 def bio():
     content = Content().latest() if Content().latest() else Content()
-    return render_template('bio.html', data=dict(content))
+    return render_template('main/bio.html', data=dict(content))
 
 
 @bp.route('/impressum')
 def impressum():
     content = Content().latest() if Content().latest() else Content()
-    return render_template('impressum.html', data=dict(content))
+    return render_template('main/impressum.html', data=dict(content))
 
 
 @bp.route('/cms', methods=['GET', 'POST'])
-#@login_required
+@login_required
 def cms():
     form = ContentUpdateForm()
     if form.validate_on_submit():
@@ -72,4 +73,4 @@ def cms():
         except:
             pass
 
-    return render_template('cms.html', form=form)
+    return render_template('main/cms.html', form=form)

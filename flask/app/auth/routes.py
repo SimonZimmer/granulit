@@ -14,13 +14,13 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            return redirect(url_for('login'))
+            return redirect(url_for('auth.login'))
         login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('cms'))
-    return render_template('login.html', title='Sign In', form=form)
+        return redirect(url_for('main.cms'))
+    return render_template('auth/login.html', title='Log In', form=form)
 
 
 @bp.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('auth.login'))

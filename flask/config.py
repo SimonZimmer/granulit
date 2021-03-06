@@ -1,5 +1,5 @@
 import os
-from werkzeug.security import generate_password_hash
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -16,7 +16,5 @@ class TestConfig(object):
     WTF_CSRF_ENABLED = False
     VERSION = "test"
     SECRET_KEY = b"12345"
-    DEFAULT_USERNAME = "testing"
-    DEFAULT_PASSWORD = generate_password_hash("testing")
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
