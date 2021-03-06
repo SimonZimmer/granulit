@@ -24,4 +24,3 @@ ENV FLASK_ENV=development
 
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["flask", "run", "--host=0.0.0.0"]
-

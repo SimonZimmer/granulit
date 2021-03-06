@@ -300,3 +300,4 @@ GitHub.sublime-settings
 
 *.pyc
 /data/certbot
+.pytest_cache

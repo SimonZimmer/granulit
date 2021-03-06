@@ -8,11 +8,9 @@ from app.models import User, Content
 class MainRoutesTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app(TestConfig)
-
         self.app_context = self.app.app_context()
         self.app_context.push()
         db.create_all()
-
         self.testapp = self.app.test_client()
 
     def tearDown(self):
@@ -81,11 +79,6 @@ class MainRoutesTestCase(unittest.TestCase):
         db.session.commit()
         response = self.testapp.get("/impressum", follow_redirects=True)
         self.assertTrue(b"unique_data_impressum" in response.data)
-
-    def test_cms(self):
-        response = self.testapp.get("/cms", follow_redirects=True)
-        self.assertEqual(200, response.status_code)
-        self.assertTrue(b"<h1>Content Management System</h1>" in response.data)
 
     def test_cms_update_content(self):
         content = Content(bio="unique_data")
