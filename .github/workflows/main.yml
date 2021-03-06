@@ -1,0 +1,23 @@
+name: unit tests
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+
+  # Run tests for any PRs.
+  pull_request:
+
+env:
+  IMAGE_NAME: simonzimmer/hidonash-website
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: |
+            docker build -t ${IMAGE_NAME} .
+            docker run ${IMAGE_NAME} bash -c "python -m unittest discover app/tests/"
